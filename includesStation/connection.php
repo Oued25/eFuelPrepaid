@@ -2,7 +2,7 @@
 session_start();// une fonction qui permet d'afficher les messages d'erreur de connexion en utilisant une varible  $_SESSION
                 // il a ete placer à ce niveau parce tout comme le ficher connexion.php, il sera appler dans tous les qutre ficher du code
     $nom_serveur = "62.171.183.84";
-    $db = "eFuelPrepaid_DEV2";
+    $db = "       eFuelPrepaid_DEV2";
     $utilisateur = "ubuntu";  
     $motpass = "bUDhKxE4$)oSQ";
 
