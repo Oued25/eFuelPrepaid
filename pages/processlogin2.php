@@ -48,28 +48,28 @@ if (isset($_POST['btnlogin'])) { // Vérifie si le bouton de soumission a été 
                     default:
                         $_SESSION['message']['text'] = "Profil inconnu!";
                         $_SESSION['message']['type'] = "warning";
-                        header('Location: login.php');
+                        header('Location: login2.php');
                         exit();
                 }
             } else {
                 // Mot de passe incorrect
                 $_SESSION['message']['text'] = "Mot de passe incorrect !";
                 $_SESSION['message']['type'] = "warning";
-                header('Location: login.php');
+                header('Location: login2.php');
                 exit();
             }
         } else {
             // Nom d'utilisateur non trouvé
             $_SESSION['message']['text'] = "Utilisateur non enregistré ! <br> Contactez votre administrateur.";
             $_SESSION['message']['type'] = "error";
-            header('Location: login.php');
+            header('Location: login2.php');
             exit();
         }
     } else {
         // Champs vides
         $_SESSION['message']['text'] = "Veuillez remplir tous les champs!";
         $_SESSION['message']['type'] = "warning";
-        header('Location: login.php');
+        header('Location: login2.php');
         exit();
     }
 }

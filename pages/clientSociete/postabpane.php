@@ -92,7 +92,7 @@
           <div class="products">
             <h6 class="text-info"><?php echo $produit['nom_produit']; ?></h6>
             <h6>F CFA <?php echo $produit['prix_unitaire']; ?></h6>
-            <input type="text" name="quantite" class="form-control" value="1" />
+            <input type="number" name="quantite" class="form-control" value="1" />
             <input type="hidden" name="nom_produit" value="<?php echo $produit['nom_produit']; ?>" />
             <input type="hidden" name="prix_unitaire" value="<?php echo $produit['prix_unitaire']; ?>" />
             <input type="submit" name="addpos" style="margin-top:5px;" class="btn btn-info" value="Ajoutez" />
@@ -129,7 +129,7 @@
           <div class="products">
             <h6 class="text-info"><?php echo $produit['nom_produit']; ?></h6>
             <h6>F CFA <?php echo $produit['prix_unitaire']; ?></h6>
-            <input type="text" name="quantite" class="form-control" value="1" />
+            <input type="number" name="quantite" class="form-control" value="1" />
             <input type="hidden" name="nom_produit" value="<?php echo $produit['nom_produit']; ?>" />
             <input type="hidden" name="prix_unitaire" value="<?php echo $produit['prix_unitaire']; ?>" />
             <input type="submit" name="addpos" style="margin-top:5px;" class="btn btn-info" value="Ajoutez" />
@@ -166,7 +166,7 @@
           <div class="products">
             <h6 class="text-info"><?php echo $produit['nom_produit']; ?></h6>
             <h6>F CFA <?php echo $produit['prix_unitaire']; ?></h6>
-            <input type="text" name="quantite" class="form-control" value="1" />
+            <input type="number" name="quantite" class="form-control" value="1" />
             <input type="hidden" name="nom_produit" value="<?php echo $produit['nom_produit']; ?>" />
             <input type="hidden" name="prix_unitaire" value="<?php echo $produit['prix_unitaire']; ?>" />
             <input type="submit" name="addpos" style="margin-top:5px;" class="btn btn-info" value="Ajoutez" />

@@ -87,7 +87,7 @@
       <!-- Boutons des tables -->
       
       <li class="nav-item">
-        <a class="nav-link" href="POS.php">
+        <a class="nav-link" href="pos.php">
         <i class="fas fa-fw fa-retweet"></i>
           <span>Transactions</span></a>
       </li>

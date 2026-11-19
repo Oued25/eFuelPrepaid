@@ -136,4 +136,4 @@ include '../../includes/sidebar.php';
           </div>
   </div>
 
-  <?php include($_SERVER['DOCUMENT_ROOT'] . '/Projet_eFuelPrepaid_fin/includes/footer.php'); ?>
+  <?php include '../../includes/footer.php'; ?>

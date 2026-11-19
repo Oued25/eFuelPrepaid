@@ -53,7 +53,7 @@ include '../../includesSociete/sidebar.php';
                 $id_station = $_GET['id'];
 
                 // Requête SQL avec PDO
-                $sql = "SELECT S.id AS id, s.code_station, s.nom_station, s.id_compagnie, s.contact, s.adresse, s.localisation, s.compte_paiementStation, cpa.nom_compagnie, s.date_creation, s.date_modif
+                $sql = "SELECT s.id AS id, s.code_station, s.nom_station, s.id_compagnie, s.contact, s.adresse, s.localisation, s.compte_paiementStation, cpa.nom_compagnie, s.date_creation, s.date_modif
                 FROM station AS s, compagnie AS cpa
                 WHERE s.id_compagnie = cpa.id
                 AND   s.code_station = :id"; 

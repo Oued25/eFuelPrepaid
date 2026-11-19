@@ -1,4 +1,9 @@
 <?php 
+// Affiche toutes les erreurs PHP (utile en débogage)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include '../../includesCompag/connection.php';  
 include '../../includesCompag/sidebar.php'; 
 
@@ -8,7 +13,7 @@ include '../../includesCompag/sidebar.php';
 $id_compagnie_connectee = $_SESSION['id_compagnie'];
 // Requête SQL pour récupérer les données de la table "produit"
 $sql = "SELECT p.id AS id, code_produit, nom_produit, p.id_compagnie,cpa.nom_compagnie, description, p.date_creation, prix_unitaire, nom_categorie 
-        FROM produit AS P
+        FROM produit AS p
         JOIN categorie AS c ON p.id_categorie = c.id
         JOIN compagnie AS cpa ON p.id_compagnie = cpa.id
         WHERE p.id_compagnie = :id_compagnie_connectee"; // Utilisation du paramètre de liaison :id
@@ -16,13 +21,30 @@ $sql = "SELECT p.id AS id, code_produit, nom_produit, p.id_compagnie,cpa.nom_com
 $req = $connection->prepare($sql);
 $req->bindParam(':id_compagnie_connectee', $id_compagnie_connectee, PDO::PARAM_INT); // Liaison du paramètre de :id avec la valeur $id_produit
 $req->execute(); // Exécutez la requête avec le paramètre de liaison
-$compagnies = $req->fetch(PDO::FETCH_ASSOC);
+//$compagnies = $req->fetch(PDO::FETCH_ASSOC);
+
 // Vérification des erreurs de requête
 if (!$req) {
     die("Erreur dans la requête SQL: " . $connection->error);
 }
-$id_compagnie = $compagnies['id_compagnie'];
-$nom_compagnie = $compagnies['nom_compagnie'];
+
+// Récupérer toutes les stations dans un tableau
+$stations = $req->fetch(PDO::FETCH_ASSOC);
+
+// Requête SQL pour récupérer le nom de la compagnie de la station connectée
+$sql_compagnie = "SELECT nom_compagnie FROM compagnie WHERE id = :id_compagnie_connectee ";
+$req_compagnie = $connection->prepare($sql_compagnie);
+$req_compagnie->bindParam(':id_compagnie_connectee', $id_compagnie_connectee, PDO::PARAM_INT);
+$req_compagnie->execute();
+$compagnie = $req_compagnie->fetch(PDO::FETCH_ASSOC);
+
+if (!$compagnie) {
+    die("Erreur : compagnie non trouvée.");
+}
+
+$nom_compagnie = $compagnie['nom_compagnie'];
+$id_compagnie = $id_compagnie_connectee;
+
 ?>
 
 <div class="card shadow mb-4">

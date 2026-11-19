@@ -39,10 +39,7 @@ if (!$req) {
             <th>Nom Station</th>
             <th>Nom Compagnie</th>   
             <th>teléphone</th>
-            <th>Adresse</th>
             <th>Localisation</th>
-            <th>Compte Paiement</th> 
-            <th>Date Création</th>
             <th>Action</th>
           </tr>
         </thead> 
@@ -55,10 +52,7 @@ if (!$req) {
                         echo "<td>".$row['nom_station']."</td>";
                         echo "<td>".$row['nom_compagnie']."</td>";
                         echo "<td>".$row['contact']."</td>";
-                        echo "<td>".$row['adresse']."</td>";
                         echo "<td>".$row['localisation']."</td>";
-                        echo "<td>".$row['compte_paiementStation']."</td>";
-                        echo "<td>".$row['date_creation']."</td>";
                       
                         echo '<td align="right">
                                 <div class="btn-group">

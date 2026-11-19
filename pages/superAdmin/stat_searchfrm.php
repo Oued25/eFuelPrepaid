@@ -1,7 +1,3 @@
-<?php 
-include($_SERVER['DOCUMENT_ROOT'] . '/Projet_eFuelPrepaid_fin/includes/connection.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/Projet_eFuelPrepaid_fin/includes/sidebar.php');
-?>
 <?php
                   // Requête pour récupérer le type de l'utilisateur 
                  /*$query = 'SELECT ID, t.TYPE
@@ -40,7 +36,15 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Projet_eFuelPrepaid_fin/includes/sidebar.p
                   }
                   */
 ?>
+<?php 
+// Affiche toutes les erreurs PHP (utile en débogage)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+include '../../includes/connection.php'; 
+include '../../includes/sidebar.php';
+?>
             
             <center><div class="card shadow mb-4 col-xs-12 col-md-8 border-bottom-primary"> 
             <div class="card-header py-3">
@@ -53,7 +57,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Projet_eFuelPrepaid_fin/includes/sidebar.p
                 $id_station = $_GET['id'];
 
                 // Requête SQL avec PDO
-                $sql = "SELECT S.id AS id, s.code_station, s.nom_station, s.id_compagnie, s.contact, s.adresse, s.localisation, s.compte_paiementStation, cpa.nom_compagnie, s.date_creation, s.date_modif
+                $sql = "SELECT s.id AS id, s.code_station, s.nom_station, s.id_compagnie, s.contact, s.adresse, s.localisation, s.compte_paiementStation, cpa.nom_compagnie, s.date_creation, s.date_modif
                 FROM station AS s, compagnie AS cpa
                 WHERE s.id_compagnie = cpa.id
                 AND   s.code_station = :id"; 
@@ -229,4 +233,4 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Projet_eFuelPrepaid_fin/includes/sidebar.p
             </div>
           </div>
 
- <?php include($_SERVER['DOCUMENT_ROOT'] . '/Projet_eFuelPrepaid_fin/includes/footer.php'); ?>
+ <?php include '../../includes/footer.php'; ?>

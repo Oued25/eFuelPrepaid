@@ -7,10 +7,10 @@ include '../../includes/sidebar.php';
 
 $id_compagnie_connectee = $_SESSION['id_compagnie'];
 // Requête SQL pour récupérer les données de la table "produit"
-$sql = " SELECT p.id AS id, code_produit, nom_produit, p.id_compagnie, cpa.nom_compagnie, p.description, p.date_creation, prix_unitaire, nom_categorie 
-        FROM produit AS p
-        JOIN categorie AS c ON p.id_categorie = c.id
-        JOIN compagnie AS cpa ON p.id_compagnie = cpa.id"; 
+    $sql = " SELECT p.id AS id, code_produit, nom_produit, p.id_compagnie, cpa.nom_compagnie, p.description, p.date_creation, prix_unitaire, nom_categorie 
+            FROM produit AS p
+            JOIN categorie AS c ON p.id_categorie = c.id
+            JOIN compagnie AS cpa ON p.id_compagnie = cpa.id"; 
 $req = $connection->prepare($sql);
 $req->execute(); // Exécuter directement sans bindParam
 $compagnies = $req->fetch(PDO::FETCH_ASSOC);
@@ -43,7 +43,7 @@ if (!$req) {
             </thead>
             <tbody>
             
-            <?php 
+                <?php 
                     // Affichage des données récupérées
                     while ($row = $req->fetch(PDO::FETCH_ASSOC)) {
                         echo "<tr>";
@@ -69,9 +69,9 @@ if (!$req) {
                         echo "</tr>";
                         
                     }
-                    ?>
+                ?>
 
-                </tbody>
+            </tbody>
         </table>
     </div>
   </div>

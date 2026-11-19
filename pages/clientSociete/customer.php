@@ -8,7 +8,7 @@ include '../../includesSociete/sidebar.php';
 
 // Requête SQL pour récupérer les données de la table "produit"
 
-$sql = "SELECT S.id AS id, s.code_station, s.nom_station, s.id_compagnie, s.contact, s.adresse, s.localisation, s.compte_paiementStation, cpa.nom_compagnie, s.date_creation
+$sql = "SELECT s.id AS id, s.code_station, s.nom_station, s.id_compagnie, s.contact, s.adresse, s.localisation, s.compte_paiementStation, cpa.nom_compagnie, s.date_creation
         FROM station AS s, compagnie AS cpa
         WHERE s.id_compagnie = cpa.id";
 

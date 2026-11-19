@@ -1,7 +1,6 @@
-<?php
-session_start();
+<?php 
+include '../includes/connection.php'; 
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,7 +26,7 @@ session_start();
                   <?php if (isset($_SESSION['reset_error'])): ?>
                     <div class="alert alert-danger"><?= $_SESSION['reset_error']; unset($_SESSION['reset_error']); ?></div>
                   <?php endif; ?>
-                  <form class="user" action="process_reset.php" method="post">
+                  <form class="user" action="resetpasswordpocess.php" method="post">
                     <div class="form-group">
                       <input class="form-control form-control-user" placeholder="Téléphone enregistré" name="contact" type="text" required>
                     </div>
@@ -41,7 +40,7 @@ session_start();
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="index.php">Retour à la connexion</a>
+                    <a class="small" href="login2.php">Retour à la connexion</a>
                   </div>
                 </div>
               </div>
@@ -51,10 +50,16 @@ session_start();
       </div> 
     </div>
   </div>
-
+</body>
+  
+<!-- JavaScript de base Bootstrap-->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript de base-->
   <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Scripts personnalisés pour toutes les pages-->
   <script src="../js/sb-admin-2.min.js"></script>
-</body>
+
 </html>

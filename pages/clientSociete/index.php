@@ -1,7 +1,6 @@
 <?php 
  include '../../includesSociete/connection.php'; 
  include '../../includesSociete/sidebar.php';
-
   ?>
 
 <!-- En-tête de la page -->

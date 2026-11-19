@@ -1,6 +1,6 @@
 <?php
 
-include '../../includesSociete/connection.php';   
+include '../../includesSociete/connection.php'; 
 include '../../includesSociete/sidebar.php';  
 
 // Vérifier si l'utilisateur est connecté
@@ -25,7 +25,7 @@ $sql = "SELECT t.id, t.code_trans, t.date_creation, p.nom_produit, t.Prix_unitai
         ORDER BY  t.date_creation DESC";
 
 // Préparation de la requête
-$req = $connection->prepare($sql); 
+$req = $connection->prepare($sql);
 
 // Liaison des paramètres
 $req->bindParam(':id', $id_user, PDO::PARAM_INT);

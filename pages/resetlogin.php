@@ -1,3 +1,7 @@
+<?php 
+include '../includes/connection.php'; 
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,11 +24,11 @@
                     <h1 class="h4 text-gray-900 mb-4">Mot de passe oublié ?</h1>
                     <p class="mb-4">Entrez votre numéro de téléphone et suivez les instructions.</p>
                   </div>
-                  <form class="user" method="POST" action="resetprocess.php">
+                  <form class="user" method="POST" action="resetloginprocess.php">
                     <div class="form-group">
                       <input type="text" name="contact" class="form-control form-control-user" placeholder="Numéro de téléphone" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-user btn-block">Réinitialiser le mot de passe</button>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Validez!</button>
                   </form>
                   <hr>
                   <div class="text-center">
@@ -38,5 +42,15 @@
       </div> 
     </div>
   </div>
-</body>
+</body>   
+<!-- JavaScript de base Bootstrap-->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript de base-->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Scripts personnalisés pour toutes les pages-->
+  <script src="../js/sb-admin-2.min.js"></script>
+
 </html>

@@ -1,4 +1,9 @@
 <?php
+// Affiche toutes les erreurs PHP (utile en débogage)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include '../../includesStation/connection.php'; 
 include '../../includesStation/sidebar.php';  
   /*$query = 'SELECT ID, t.TYPE 
@@ -32,7 +37,7 @@ include '../../includesStation/sidebar.php';
 
               // Requête SQL avec PDO
               $sql = "SELECT p.id AS id, code_produit, nom_produit, description, date_creation, date_modif, prix_unitaire, nom_categorie 
-                      FROM produit AS P, categorie AS c
+                      FROM produit AS p, categorie AS c
                       WHERE c.id=p.id_categorie
                       AND   p.code_produit = :id";
 

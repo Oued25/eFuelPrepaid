@@ -8,7 +8,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-              <span>Droits d'auteur © 2024. Tous droits réservés.</span>
+              <span>Droits d'auteur © 2024 - <?php echo date('Y'); ?>. Tous droits réservés.</span>
           </div>
         </div>
       </footer>

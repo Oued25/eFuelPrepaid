@@ -1,4 +1,9 @@
 <?php 
+// Affiche toutes les erreurs PHP (utile en débogage)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include '../../includesStation/connection.php'; 
 include '../../includesStation/sidebar.php';  
 
@@ -9,7 +14,7 @@ $id_compagnie_connectee = $_SESSION['id_compagnie'];
 // Requête SQL pour récupérer les données de la table "produit"
 
 $sql = "SELECT p.id AS id, code_produit, nom_produit, p.id_compagnie, description, p.date_creation, prix_unitaire, nom_categorie 
-        FROM produit AS P
+        FROM produit AS p
         JOIN categorie AS c ON p.id_categorie = c.id
         JOIN compagnie AS cpa ON p.id_compagnie = cpa.id
         WHERE p.id_compagnie = :id_compagnie_connectee"; // Utilisation du paramètre de liaison :id
